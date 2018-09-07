@@ -36,7 +36,15 @@ func EncryptFile(msg *gmail.Message, hashStr string) {
     if err != nil {
         fmt.Println(err)
         return
-    }
+	}
+	// Or use mail.ReadMessage with mail/strings packages
+	// r := strings.NewReader(msg)
+	// data, err := mail.ReadMessage(r)
+	// if err != nil {
+	// 	// log.Fatal(err)
+	// 	fmt.Println(err)
+    // 	return
+	// }
 	
 	// json.NewEncoder(f).Encode(msg)
 	f.Write(encrypt(data, hashStr))
