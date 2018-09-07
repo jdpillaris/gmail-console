@@ -23,12 +23,12 @@ func main() {
 	endDateStr, _ := reader.ReadString('\n')
 	endDateStr = strings.TrimSuffix(endDateStr, "\n")
 
-	while !isValid(startDateStr, endDateStr) {
+	for !(isValid(startDateStr, endDateStr)) {
 		fmt.Print("Start of the retrieval period (DD-MM-YYYY): ")
-		startDateStr, _ := reader.ReadString('\n')
+		startDateStr, _ = reader.ReadString('\n')
 		startDateStr = strings.TrimSuffix(startDateStr, "\n")
 		fmt.Print("End of the retrieval period (DD-MM-YYYY): ")
-		endDateStr, _ := reader.ReadString('\n')
+		endDateStr, _ = reader.ReadString('\n')
 		endDateStr = strings.TrimSuffix(endDateStr, "\n")
 	}
 
@@ -41,6 +41,6 @@ func main() {
 }
 
 // isValid returns true. Assume that the correct start/end dates are entered 
-func isValid(begin, end string) {
+func isValid(begin, end string) bool {
 	return true
 }
